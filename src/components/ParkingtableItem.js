@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 import { GhentParkingsContext } from '../context/GhentParkingsContext';
+import { Link } from 'react-router-dom';
 
 const ParkingtableItem = ({parking}) => {
 
@@ -18,7 +19,7 @@ const ParkingtableItem = ({parking}) => {
 
     return (
         <tr>
-            <td>{parking.name}</td>
+            <td><Link to={'/parking/' + parking.id}>{parking.name}</Link></td>
             <td>{parking.address}</td>
             <td>{parking.availablecapacity} / {parking.totalcapacity}</td>
             <td>

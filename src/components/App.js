@@ -3,13 +3,18 @@ import GhentParkingsContextProvider from '../context/GhentParkingsContext';
 
 import { Header } from './Header'
 import Parkingtable from './Parkingtable';
+import {Switch, Route} from 'react-router-dom';
+import ParkingInfo from './ParkingInfo';
 
 const App = () => {
     return (
         <GhentParkingsContextProvider>
             <div className='container'>
                 <Header/>
-                <Parkingtable/>
+                <Switch>
+                    <Route exact path='/' component={Parkingtable}/>
+                    <Route path='/parking' component={ParkingInfo}/>
+                </Switch>
             </div>
         </GhentParkingsContextProvider>
     )

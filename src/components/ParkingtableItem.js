@@ -4,7 +4,17 @@ import { GhentParkingsContext } from '../context/GhentParkingsContext';
 
 const ParkingtableItem = ({parking}) => {
 
-    const {parkAtParking, parkedParking} = useContext(GhentParkingsContext);
+    const {parkAtParking, parkedParking, leaveParking} = useContext(GhentParkingsContext);
+
+    let parkButton;
+
+    if (parking.availablecapacity > 0) {
+        if (parkedParking === null) {
+            parkButton = <button className='btn btn-success' onClick={() =>  parkAtParking(parking.id)}>Park Here</button>
+        } else if (parkedParking !== null && parkedParking.id === parking.id) {
+            parkButton = <button className='btn btn-danger' onClick={() =>  leaveParking(parking.id)}>Leave parking</button>
+        } 
+    }
 
     return (
         <tr>
@@ -12,9 +22,7 @@ const ParkingtableItem = ({parking}) => {
             <td>{parking.address}</td>
             <td>{parking.availablecapacity} / {parking.totalcapacity}</td>
             <td>
-                <button className='btn btn-success' onClick={() =>  parkAtParking(parking.id)}>
-                    Park Here
-                </button>
+                {parkButton}
             </td>
         </tr>
     )

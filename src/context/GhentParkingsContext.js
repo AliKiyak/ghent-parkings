@@ -4,10 +4,6 @@ export const GhentParkingsContext = createContext();
 
 const GhentParkingsContextProvider = props => {
 
-
-
-
-
     const [parkings, setParkings] = useState([]);
     const [parkedParking, setParkedGarage] = useState(null);
 
@@ -27,10 +23,8 @@ const GhentParkingsContextProvider = props => {
     }, [])
 
     const parkAtParking = (id) => {
-        // const chosenParking = parkings.find(parking => parking.id == id);
-        // setParkedGarage(chosenParking);
-
         const chosenParkingIndex = parkings.findIndex(parking => parking.id === id);
+
         setParkedGarage(parkings[chosenParkingIndex]);
 
         const updatedParkings = [...parkings];
@@ -39,8 +33,18 @@ const GhentParkingsContextProvider = props => {
 
     }
 
+    const leaveParking = (id) => {
+        const chosenParkingIndex = parkings.findIndex(parking => parking.id === id);
+
+        setParkedGarage(null);
+
+        const updatedParkings = [...parkings];
+        updatedParkings[chosenParkingIndex].availablecapacity += 1;
+        setParkings(updatedParkings);
+    }
+
     return (
-        <GhentParkingsContext.Provider value={{parkings, parkAtParking, parkedParking}}>
+        <GhentParkingsContext.Provider value={{parkings, parkAtParking, parkedParking, leaveParking}}>
             {props.children}
         </GhentParkingsContext.Provider>
     )

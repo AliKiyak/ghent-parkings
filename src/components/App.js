@@ -13,7 +13,7 @@ const App = () => {
                 <Header/>
                 <Switch>
                     <Route exact path='/' component={Parkingtable}/>
-                    <Route path='/parking' component={ParkingInfo}/>
+                    <Route path='/parking/:parkingId' component={ParkingInfo}/>
                 </Switch>
             </div>
         </GhentParkingsContextProvider>

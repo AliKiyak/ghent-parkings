@@ -32,12 +32,15 @@ const GhentParkingsContextProvider = props => {
 
         const chosenParkingIndex = parkings.findIndex(parking => parking.id === id);
         setParkedGarage(parkings[chosenParkingIndex]);
-        
+
+        const updatedParkings = [...parkings];
+        updatedParkings[chosenParkingIndex].availablecapacity -= 1;
+        setParkings(updatedParkings);
 
     }
 
     return (
-        <GhentParkingsContext.Provider value={{parkings}}>
+        <GhentParkingsContext.Provider value={{parkings, parkAtParking, parkedParking}}>
             {props.children}
         </GhentParkingsContext.Provider>
     )

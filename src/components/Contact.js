@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Contact = ({address, contactinfo}) => {
     return (
@@ -9,6 +10,11 @@ const Contact = ({address, contactinfo}) => {
         </ul>
     </div>
     )
+}
+
+Contact.propTypes = {
+    address: PropTypes.string,
+    contactinfo: PropTypes.string
 }
 
 export default Contact

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Openingtimes = ({openingtimes}) => {
     return (
@@ -11,5 +12,13 @@ const Openingtimes = ({openingtimes}) => {
         </div>
     )
 }
+
+Openingtimes.propTypes = {
+    openingtimes: PropTypes.shape({
+        days: PropTypes.array,
+        from: PropTypes.string,
+        to: PropTypes.string
+    }),
+};
 
 export default Openingtimes

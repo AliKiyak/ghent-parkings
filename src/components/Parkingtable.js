@@ -1,5 +1,5 @@
-import React, {useContext} from 'react'
-import { GhentParkingsContext } from '../context/GhentParkingsContext'
+import React, {useContext} from 'react';
+import { GhentParkingsContext } from '../context/GhentParkingsContext';
 import ParkingtableItem from './ParkingtableItem';
 
 const Parkingtable = () => {

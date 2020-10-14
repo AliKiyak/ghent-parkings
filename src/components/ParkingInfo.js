@@ -1,5 +1,4 @@
-import { string } from 'prop-types';
-import React, {useContext, useEffect} from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { GhentParkingsContext } from '../context/GhentParkingsContext'
 import Contact from './Contact';
@@ -22,5 +21,6 @@ const ParkingInfo = (props) => {
         </div>
     )
 }
+
 
 export default ParkingInfo

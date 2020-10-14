@@ -1,11 +1,17 @@
 import React from 'react'
+import GhentParkingsContextProvider from '../context/GhentParkingsContext';
+
 import { Header } from './Header'
+import Parkingtable from './Parkingtable';
 
 const App = () => {
     return (
-        <div className='container'>
-            <Header/>
-        </div>
+        <GhentParkingsContextProvider>
+            <div className='container'>
+                <Header/>
+                <Parkingtable/>
+            </div>
+        </GhentParkingsContextProvider>
     )
 }
 

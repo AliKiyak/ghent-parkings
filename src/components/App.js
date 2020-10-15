@@ -1,6 +1,5 @@
 import React from 'react';
-import GhentParkingsContextProvider from '../context/GhentParkingsContext';
-
+import GhentParkingsContextProvider from '../provider/GhentParkingsContextProvider';
 import { Header } from './Header';
 import Parkingtable from './Parkingtable';
 import {Switch, Route} from 'react-router-dom';

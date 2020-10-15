@@ -22,7 +22,7 @@ const ParkingtableItem = ({parking}) => {
             <td><Link to={'/parking/' + parking.id}>{parking.name}</Link></td>
             <td>{parking.address}</td>
             <td>{parking.availablecapacity} / {parking.totalcapacity}</td>
-            <td>
+            <td >
                 {parkButton}
             </td>
         </tr>

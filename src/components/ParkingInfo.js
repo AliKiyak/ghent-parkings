@@ -13,6 +13,8 @@ const ParkingInfo = (props) => {
     const openingTimes = JSON.parse(chosenParking.openingtimes)[0];
     console.log('Openingtimes: ', openingTimes)
 
+
+
     return (
         <div className='row'>
             <Openingtimes openingtimes={openingTimes} />

@@ -4,16 +4,17 @@ import ParkingtableItem from './ParkingtableItem';
 
 const Parkingtable = () => {
     const {parkings} = useContext(GhentParkingsContext);
+
     return (
         <div className='row mt-3'>
             <div className='col-12'>
-                <table className='table table-bordered'>
+                <table className='table table-bordered h-100'>
                     <thead>
                     <tr>
                         <th scope='col'>Name</th>
                         <th scope='col'>Location</th>
                         <th scope='col'>Capacity</th>
-                        <th scope='col'>Action</th>
+                        <th scope='col' className='w-25'>Action</th>
                     </tr>
                     </thead>
                     <tbody>

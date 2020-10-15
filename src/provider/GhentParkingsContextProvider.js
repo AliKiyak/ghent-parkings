@@ -7,8 +7,8 @@ const GhentParkingsContextProvider = props => {
     const [parkedParking, setParkedGarage] = useState(null);
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_GHENT_PARKINGS_API)
-        //fetch('https://data.stad.gent/api/records/1.0/search/?dataset=bezetting-parkeergarages-real-time&q=&rows=100')
+        //fetch(process.env.REACT_APP_GHENT_PARKINGS_API)
+        fetch('https://data.stad.gent/api/records/1.0/search/?dataset=bezetting-parkeergarages-real-time&q=&rows=100')
         .then(result => result.json())
         .then(result => {
             console.log('Unfiltered results of the API request.', result.records);

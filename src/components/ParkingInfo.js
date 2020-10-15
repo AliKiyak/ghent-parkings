@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { GhentParkingsContext } from '../context/GhentParkingsContext'
 import Contact from './Contact';
 import Openingtimes from './Openingtimes';
@@ -7,12 +7,13 @@ import Openingtimes from './Openingtimes';
 const ParkingInfo = (props) => {
 
     const {parkings} = useContext(GhentParkingsContext);
-    const chosenParking = parkings.find(parking => parseInt(parking.id) === parseInt(props.match.params.parkingId));
+    const {parkingId} = useParams()
+
+    const chosenParking = parkings.find(parking => parseInt(parking.id) === parseInt(parkingId));
     console.log('The parking with the extra information being shown on the screen: ', chosenParking);
 
     const openingTimes = JSON.parse(chosenParking.openingtimes)[0];
     console.log('Openingtimes: ', openingTimes)
-
 
 
     return (
